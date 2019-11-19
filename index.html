@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Meme Generator</title>
+    <link rel="stylesheet" href="main.css">
+    <script type="text/javascript" src="test.js"></script>
 </head>
 <body>
-    <form action="#">
+    <form id="form">
         <div>        
-            <input class="top_text" type="text" placeholder="Meme Top">
-        <br>       
-            <input class="bottom_text" type="text" placeholder="Meme Bottom">
-        </div>
-        <div>        
-            <input class="submit_button" type="submit" value="Generate Meme">
-        </div>
-        <textarea name="top_meme" id="" cols="30" rows="10" placeholder="Meme Top"></textarea>
-        <br>
-        <textarea name="top_meme" id="" cols="30" rows="10" placeholder="Meme Bottom"></textarea>
-
+            <label for="top-text">Top Text:</label>
+            <input class="top-text" type="text" placeholder="Meme Top">
+            <br>
+            <label for="bottom-text">Bottom Text:</label>       
+            <input class="bottom-text" type="text" placeholder="Meme Bottom">
+            <br>
+            <label for="image-url">Image URL:</label>
+            <input class="image-url" type="text" placeholder="Put Image Here">
+            <button type="submit" id="generate-meme">Generate Meme</button>
+        </div>        
     </form>
+    <section>
+        <div class="gallery"></div>
+    </section>
+    <br>
+    <output>
+        
+    </output>
+
 </body>
 </html>
