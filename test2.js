@@ -7,20 +7,33 @@ window.onload = function() {
     genMeme = document.querySelector(".gen-meme");
     gallery = document.querySelector(".gallery");
 
+
+    // Generates the meme and adds it to the gallery
     genMeme.addEventListener("click", function(event){
         let newDiv = document.createElement("div");
         let memeImg = document.createElement("img");
-        newDiv.innerHTML = topText.value;
+
+        if(topText.value.length > 20){
+            alert("top too long, please use less than 20 characters for the top text")
+        } else {
+            console.log(topText.value.length);
+            newDiv.innerHTML = topText.value;
+        }
+        if(bottomText.value.length > 20){
+            alert("bottom too long, Please use less than 20 characters for the bottom text")
+        } else {
+            newDiv.innerHTML += bottomText.value;
+        }
+
+
         gallery.appendChild(newDiv);
         memeImg.src = imgUrl.value;
         newDiv.appendChild(memeImg);
         memeImg.style.width = "30%";
         memeImg.style.height = "auto";
-        newDiv.style.display = "inling-block";
-
-        Array.isArray(gallery) ? console.log("array") : console.log("not array");
-        
-        
-        //console.log(imgUrl.value);
+        newDiv.style.display = "inline";
     })
+
+    
+    
 }
