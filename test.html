@@ -2,19 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <script>
-        document.addEventListener("DOMContentLoaded", function(){
-            var container = document.getElementById("container");
-            container.addEventListener("click", function(event){
-                console.log("Let's look at the event object!", event);
-            });
-        });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Meme Generator</title>
+    <script type="text/javascript" src="test2.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="container">
-        Click on me!
+
+    
+    <div>
+        <div>
+            <label for="top-text">Meme Top:</label>
+            <input type="text" class="top-text" placeholder="Top Text">    
+        </div>
+        <div><label for="bottom-text">Meme Bottom:</label>
+            <input type="text" class="bottom-text" placeholder="Bottom Text">
+            </div>
+        <div>
+            <label for="image-url">Image URL:</label>
+            <input type="text" class="image-url" placeholder="Image URL">
+        </div>
+        <div>
+            <button class="gen-meme">Generate Meme</button>
+        </div>
     </div>
+    
+
+    <div class="gallery">
+
+    </div>
+
 </body>
 </html>
