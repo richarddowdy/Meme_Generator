@@ -36,49 +36,67 @@ window.onload = function() {
             newMeme.appendChild(topMeme);
             newMeme.appendChild(bottomMeme);
             
-
+            
             
             // New Meme styling
             newMeme.style.height = "auto";
             newMeme.style.display = "inline-block";
             newMeme.style.width = "40%"
-            newMeme.style.margin = "40px";
+            newMeme.style.margin = "20px 5%";
             newMeme.style.position = "relative";
             
             // Image styling
             memeImg.style.width = "100%";
-            memeImg.style.height = "auto";
+            memeImg.style.maxHeight = "auto";
 
             // Meme text styling
             //top
+            topMeme.style.width = "90%"
             topMeme.style.position = "absolute";
             topMeme.style.marginBottom = "40px";
             topMeme.style.color = "white"
+            topMeme.style.fontSize = "40px";
+            topMeme.style.fontFamily = "Impact";
+            topMeme.style.letterSpacing = "3px";
+            topMeme.style.webkitTextStroke = "2px black";
+            topMeme.style.webkitTextFillColor = "white";
             topMeme.style.textAlign = "center";
-            topMeme.style.fontSize = "30px";
+
+
+
+
+
             //bottom
+            bottomMeme.style.width = "90%";
             bottomMeme.style.position = "absolute";
             bottomMeme.style.marginTop = "40px";
             bottomMeme.style.color = "white";
+            bottomMeme.style.fontSize = "40px";
+            bottomMeme.style.fontFamily = "Impact";
+            bottomMeme.style.letterSpacing = "3px";
+            bottomMeme.style.webkitTextStroke = "2px black";
+            bottomMeme.style.webkitTextFillColor = "white";
             bottomMeme.style.textAlign = "center";
-            bottomMeme.style.fontSize = "30px";
 
-            // Centers the meme 
+
+            // Centers the text of the meme 
             //top
             topMeme.style.top = "15%";
             topMeme.style.left = "50%";
             topMeme.style.zIndex = "1";
             topMeme.style.transform = "translate(-50%, -50%)";
             //bottom
-            bottomMeme.style.bottom = "5%";
+            bottomMeme.style.top = "68%";
             bottomMeme.style.left = "50%";
             bottomMeme.style.zIndex = "1";
             bottomMeme.style.transform = "translate(-50%, -50%)";
-            
+
             // Prevent refresh after function executes
             event.preventDefault();
         }
     })
+
+
 
 }
 
