@@ -1,42 +1,53 @@
 window.onload = function() {
     // Declaring variables
-    let form, topText, bottomText, imgUrl, gallery
+    let form, topText, bottomText, imgUrl, gallery, meme
 
+    // Assigning variables to DOM elements
     topText = document.querySelector(".top-text");
     bottomText = document.querySelector(".bottom-text");
     imgUrl = document.querySelector(".image-url");
     gallery = document.querySelector(".gallery");
     form = document.getElementById("form");
 
+    // Creates a new meme when the form is submitted
     form.addEventListener("submit", function(){
-        // Creating all the internal meme elements
+        // Creating all internal meme elements
         let newMeme = document.createElement("div");
         let topMeme = document.createElement("div");
         let bottomMeme = document.createElement("div");
         let memeImg = document.createElement("img");
         
-        //checking the length of the meme text top&bottom
-        if(topText.value.length > 20 || bottomText.value.length > 20){
-            // Alerts the user that the text is too long
-            alert("Your text is too long\n Please use less than 20 characters per line");
-            event.preventDefault();
+        let meme = document.getElementsByClassName("newMeme");
 
-            //this can be broken up into more elif statements in order to be 
-            //more specific about which, or both, text fields is too long.
+        //checking the length of the meme text top&bottom
+        if(topText.value.length > 20 && bottomText.value.length > 20){
+            // Alerts the user that the text is too long
+            alert("Both text inputs are too long.\nPlease use less than 20 characters per line");
+            event.preventDefault();
+        } else if (topText.value.length > 20){
+            alert("That's not clever enough.\nUse less than 20 characters at the top");
+            event.preventDefault();
+        } else if (bottomText.value.length > 20){
+            alert("Use 20 characters or less on the bottom");
+            event.preventDefault();
+        } else if (meme.length > 14){
+            // Alerts the user if they have made too many memes
+            alert("You've Made Enought\nRemove some Memes to make more");
+            event.preventDefault();       
         } else {
-            console.log(topText.value);
+
             topMeme.innerHTML = topText.value
             bottomMeme.innerHTML = bottomText.value
         
         
             // Adding a newMeme div to the dom with top&bottom text divs inside
             gallery.appendChild(newMeme);
+            newMeme.className += "newMeme";
             memeImg.src = imgUrl.value;
             newMeme.appendChild(memeImg);
             newMeme.appendChild(topMeme);
             newMeme.appendChild(bottomMeme);
-            
-            
+
             
             // New Meme styling
             newMeme.style.height = "auto";
@@ -44,6 +55,7 @@ window.onload = function() {
             newMeme.style.width = "40%"
             newMeme.style.margin = "20px 5%";
             newMeme.style.position = "relative";
+
             
             // Image styling
             memeImg.style.width = "100%";
@@ -51,6 +63,7 @@ window.onload = function() {
 
             // Meme text styling
             //top
+
             topMeme.style.width = "90%"
             topMeme.style.position = "absolute";
             topMeme.style.marginBottom = "40px";
@@ -61,11 +74,7 @@ window.onload = function() {
             topMeme.style.webkitTextStroke = "2px black";
             topMeme.style.webkitTextFillColor = "white";
             topMeme.style.textAlign = "center";
-
-
-
-
-
+            topMeme.style.fontWeight = "bold";
             //bottom
             bottomMeme.style.width = "90%";
             bottomMeme.style.position = "absolute";
@@ -77,6 +86,7 @@ window.onload = function() {
             bottomMeme.style.webkitTextStroke = "2px black";
             bottomMeme.style.webkitTextFillColor = "white";
             bottomMeme.style.textAlign = "center";
+            bottomMeme.style.fontWeight = "bold";
 
 
             // Centers the text of the meme 
@@ -93,8 +103,21 @@ window.onload = function() {
 
             // Prevent refresh after function executes
             event.preventDefault();
-        }
+        }    
+        
+        // Removes a meme when the meme is clicked
+        console.log(meme.length);
+        gallery.addEventListener("click", function(event){
+            if(event.target.className === "newMeme"){
+                event.target.remove();
+            }
+        })
     })
+    // meme.addEventListener("click", function(event){
+    //     event.target.style.background = "yellow";
+    // })
+    
+    
 
 
 
