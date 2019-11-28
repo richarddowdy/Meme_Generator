@@ -1,0 +1,32 @@
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .meme{
+    width: 40%;
+    position: relative;
+    
+  }
+  .meme img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: solid 5px black;
+  }
+  .toptext{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }
+  .bottomtext{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+  }

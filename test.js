@@ -63,7 +63,6 @@ window.onload = function() {
 
             // Meme text styling
             //top
-
             topMeme.style.width = "90%"
             topMeme.style.position = "absolute";
             topMeme.style.marginBottom = "40px";
