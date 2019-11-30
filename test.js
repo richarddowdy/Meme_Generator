@@ -1,22 +1,22 @@
 window.onload = function() {
     // Declaring variables
-    let form, topText, bottomText, imgUrl, gallery, meme
+    let memeForm, topText, bottomText, imgUrl, gallery
 
     // Assigning variables to DOM elements
     topText = document.querySelector(".top-text");
     bottomText = document.querySelector(".bottom-text");
     imgUrl = document.querySelector(".image-url");
     gallery = document.querySelector(".gallery");
-    form = document.getElementById("form");
+    memeForm = document.getElementById("form");
 
     // Creates a new meme when the form is submitted
-    form.addEventListener("submit", function(){
+    memeForm.addEventListener("submit", function(){
         // Creating all internal meme elements
         let newMeme = document.createElement("div");
         let topMeme = document.createElement("div");
         let bottomMeme = document.createElement("div");
         let memeImg = document.createElement("img");
-        
+        let deleteButton = document.createElement("button");
         let meme = document.getElementsByClassName("newMeme");
 
         //checking the length of the meme text top&bottom
@@ -31,8 +31,8 @@ window.onload = function() {
             alert("Use 20 characters or less on the bottom");
             event.preventDefault();
         } else if (meme.length > 14){
-            // Alerts the user if they have made too many memes
-            alert("You've Made Enought\nRemove some Memes to make more");
+            // Alerts the user if they have made too many memes(15)
+            alert("You've Made Enought\nRemove some memes to make more");
             event.preventDefault();       
         } else {
 
@@ -47,6 +47,7 @@ window.onload = function() {
             newMeme.appendChild(memeImg);
             newMeme.appendChild(topMeme);
             newMeme.appendChild(bottomMeme);
+            newMeme.appendChild(deleteButton);
 
             
             // New Meme styling
@@ -60,6 +61,8 @@ window.onload = function() {
             // Image styling
             memeImg.style.width = "100%";
             memeImg.style.maxHeight = "auto";
+            memeImg.style.display = "block";
+
 
             // Meme text styling
             //top
@@ -100,26 +103,24 @@ window.onload = function() {
             bottomMeme.style.zIndex = "1";
             bottomMeme.style.transform = "translate(-50%, -50%)";
 
+            // Delete Button style and positioning
+            deleteButton.className = "deleteButton";
+            deleteButton.type = "button";
+            deleteButton.innerText = "button";
+            deleteButton.style.position = "absolute";
+            deleteButton.style.bottom = "-5%"
+
             // Prevent refresh after function executes
             event.preventDefault();
         }    
-        
-        // Removes a meme when the meme is clicked
-        console.log(meme.length);
-        gallery.addEventListener("click", function(event){
-            if(event.target.className === "newMeme"){
-                event.target.remove();
-            }
-        })
     })
-    // meme.addEventListener("click", function(event){
-    //     event.target.style.background = "yellow";
-    // })
     
-    
-
-
-
+    // Removes the above meme when the button is clicked
+    gallery.addEventListener("click", function(event){
+        if(event.target.className === "deleteButton"){
+            event.target.parentNode.remove();
+        }
+    });
 }
 
 
