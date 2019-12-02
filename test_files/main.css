@@ -4,7 +4,7 @@ h1{
     text-align: center;
     margin: 40px auto;
     font-family: 'Baloo Bhai', cursive;
-    text-shadow: 3px 4px rgba(211, 113, 230, 0.749);
+    text-shadow: 3px 4px rgb(218, 109, 240);
 }
 form {
     height: 250px;
@@ -23,8 +23,6 @@ form {
     color: black;
     border-color: rgb(214, 222, 255);
     border-radius: 5px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
 }
 
 .top-text, .bottom-text{
