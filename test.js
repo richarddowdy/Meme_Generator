@@ -22,17 +22,17 @@ window.onload = function() {
         //checking the length of the meme text top&bottom
         if(topText.value.length > 40 && bottomText.value.length > 40){
             // Alerts the user that the text is too long
-            alert("Both text inputs are too long.\nPlease use less than 40 characters per line");
+            alert("Both text inputs are too long.\nPlease use less than 40 characters per line.");
             event.preventDefault();
         } else if (topText.value.length > 40){
-            alert("That's not clever enough.\nUse less than 40 characters on the top");
+            alert("That's not clever enough.\nUse less than 40 characters on the top.");
             event.preventDefault();
         } else if (bottomText.value.length > 40){
-            alert("Use 40 characters or less on the bottom");
+            alert("Use 40 characters or less on the bottom.");
             event.preventDefault();
         } else if (meme.length > 14){
             // Alerts the user if they have made too many memes(15)
-            alert("You've Made Enought\nRemove some memes to make more");
+            alert("You've Made Enough\nRemove some memes to make more");
             event.preventDefault();       
         } else {
             // Setting the Meme text to the user's input
