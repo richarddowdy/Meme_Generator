@@ -19,15 +19,20 @@ window.onload = function() {
         let deleteButton = document.createElement("button");
         let meme = document.getElementsByClassName("newMeme");
 
-        //checking the length of the meme text top&bottom
-        if(topText.value.length > 40 && bottomText.value.length > 40){
+        //checking that all fields have a value
+        if(topText.value.length === 0 || bottomText.value.length === 0 || imgUrl.value.length === 0){
+            alert("All fields are required");
+            event.preventDefault();
+        } else if (topText.value.length > 40 && bottomText.value.length > 40){
             // Alerts the user that the text is too long
             alert("Both text inputs are too long.\nPlease use less than 40 characters per line.");
             event.preventDefault();
         } else if (topText.value.length > 40){
+            // Alerts the user that the text is too long
             alert("That's not clever enough.\nUse less than 40 characters on the top.");
             event.preventDefault();
         } else if (bottomText.value.length > 40){
+            // Alerts the user that the text is too long
             alert("Use 40 characters or less on the bottom.");
             event.preventDefault();
         } else if (meme.length > 14){
